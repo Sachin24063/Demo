@@ -14,8 +14,16 @@ if [ "$1" = '--version' ]; then
 	INSTALL_NODE_VER=$2
 fi
 
-echo "==> Ensuring .bashrc exists and is writable"
-touch ~/.bashrc
+# Ensure the directory exists
+mkdir -p ~/.bashrc.d
+
+# echo "==> Ensuring .bashrc exists and is writable"
+# touch ~/.bashrc
+
+# Check if .bashrc exists before touching it
+if [ ! -f ~/.bashrc ]; then
+    touch ~/.bashrc
+fi
 
 echo "==> Installing node version manager (NVM). Version $INSTALL_NVM_VER"
 # Removed if already installed
