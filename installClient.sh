@@ -84,7 +84,8 @@ cd client
 nvm -v
 node -v
 npm -v
-npm i --force
+# npm i --force
+npm install
 npm run build
 sudo apt-get update -y
 sudo apt install nginx -y
